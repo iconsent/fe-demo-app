@@ -11,8 +11,8 @@ RUN mv /source/node_modules /build/node_modules
 # Install dependencies
 RUN npm install
 
-# Build prod
-RUN npm run build --prod
+# Build prod --configuration=production
+RUN npm run build -- --prod
 
 # ----------------------------------
 # Prepare production environment
