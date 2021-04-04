@@ -32,10 +32,10 @@ metadata:
   name: fe-demo-app
 spec:
   ports:
-  - name: 8080-8080
-    port: 8080
+  - name: web
+    port: 80
     protocol: TCP
-    targetPort: 2000
+    targetPort: 80
   selector:
     app: fe-demo-app
   type: LoadBalancer

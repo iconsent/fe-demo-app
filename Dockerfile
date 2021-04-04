@@ -33,7 +33,7 @@ RUN chown root /usr/share/nginx/html/*
 RUN chmod 755 /usr/share/nginx/html/*
 
 # Expose port
-EXPOSE 2000
+EXPOSE 80
 
 # Start
 CMD ["nginx", "-g", "daemon off;"]
