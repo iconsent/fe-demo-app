@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fe-demo-app
+  name: fe-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe-demo-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fe-demo-app
+    spec:
+      containers:
+      - image: iconsent/fe-demo-app
+        name: fe-demo
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: fe-demo-app
+  name: fe-demo-app
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 2000
+  selector:
+    app: fe-demo-app
+  type: LoadBalancer
+status:
+  loadBalancer: {}
