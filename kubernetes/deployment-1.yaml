@@ -35,6 +35,6 @@ spec:
     targetPort: 80
   selector:
     app: fe-demo-app
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer: {}
